@@ -14,6 +14,7 @@ authors = []
 description = "The assault rifle zooms 2x with the pistol's scope, its bullets spread from 0.05 to 3 degrees, carry 300 world units and ricochet off stone, metal, ice and energy shields."
 format = 2
 size = 2412
+sha256 = "151e3acc0d81d69828bf0ed9b16f759920934f31ff6c594910be12fa44cfe085"
 
 [[mutator.file]]
 path = "mutator.toml"
@@ -29,6 +30,7 @@ authors = []
 description = "Every biped's head, the players' and the AI's, is drawn and hit at two and a half times its size."
 format = 1
 size = 205
+sha256 = "9a58f46b1a82f98ca779c2893c35d16bea43026432dc8c8be4ce9a649a4d4fc3"
 
 [[mutator.file]]
 path = "mutator.toml"
@@ -44,6 +46,7 @@ authors = []
 description = "A UH-144 Falcon on Blood Gulch, ten world units in front of the red base's Warthog. Its pilot flies it and fires its chin gun; its passengers fire their own weapons."
 format = 3
 size = 10293512
+sha256 = "7323c3174487f22cffe6086e98e83f53aa0d27ad0965aa18740e3caafeb1d557"
 
 [[mutator.file]]
 path = "mutator.toml"
@@ -64,6 +67,7 @@ authors = []
 description = "The plasma rifle as Combat Revolved has it, without its zoom: 6 to 9 shots a second, a spread of at most 0.75 degrees, slower bolts of 13 damage that reach 45 world units, and less overheating and wear."
 format = 2
 size = 1689
+sha256 = "d724640731b3faa306759127c133f8eb0a8d05090e53357a4a68017eeff1bb04"
 
 [[mutator.file]]
 path = "mutator.toml"
