@@ -17,3 +17,11 @@ the game plays the stock one, not the copy, until its `id` is changed.
 `falcon/falcon.cevehicle` is built from `bigass_open_v1.1.map` with GulchCE's
 `build/linux/cevehicle_build` (the command is in `falcon/mutator.toml`). The
 Falcon is a fan asset without a licence.
+
+## The index
+
+`mutator-index.toml` lists the mutators and their files' sizes and SHA-256
+checksums, for a game given this repository's link (docs/mutators.md,
+"Mutator repositories", in GulchCE). Write it again after changing a mutator:
+
+    python <GulchCE>/tools/mutator_index.py .

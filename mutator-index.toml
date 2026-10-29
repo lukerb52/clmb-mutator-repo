@@ -1,0 +1,71 @@
+# A mutator repository's index (docs/mutators.md, "Mutator repositories"),
+# written by tools/mutator_index.py: do not edit it by hand.
+
+format = 1
+name = "clmb's mutators"
+description = "The three stock mutators and a Falcon, by CLM Bubar."
+
+[[mutator]]
+folder = "accurized_ma5b"
+id = "accurized_ma5b"
+name = "Accurized MA5B"
+version = "1"
+authors = []
+description = "The assault rifle zooms 2x with the pistol's scope, its bullets spread from 0.05 to 3 degrees, carry 300 world units and ricochet off stone, metal, ice and energy shields."
+format = 2
+size = 2412
+
+[[mutator.file]]
+path = "mutator.toml"
+size = 2412
+sha256 = "974cbdbb2472bc8a30279ac26172bb1cfccc212759024b566da56118c5e6abbd"
+
+[[mutator]]
+folder = "big_head"
+id = "big_head"
+name = "Big head"
+version = "1"
+authors = []
+description = "Every biped's head, the players' and the AI's, is drawn and hit at two and a half times its size."
+format = 1
+size = 205
+
+[[mutator.file]]
+path = "mutator.toml"
+size = 205
+sha256 = "bb147e9de6ee0b2d6e4a829c12792010828a650dcf8bf91eeffdf0feefb8ffc1"
+
+[[mutator]]
+folder = "falcon"
+id = "falcon"
+name = "Falcon"
+version = "1"
+authors = []
+description = "A UH-144 Falcon on Blood Gulch, ten world units in front of the red base's Warthog. Its pilot flies it and fires its chin gun; its passengers fire their own weapons."
+format = 3
+size = 10293512
+
+[[mutator.file]]
+path = "mutator.toml"
+size = 1196
+sha256 = "5a2f9dbe24157a615a937563bac4d7303d03d78d55e7689d35605ac4c79d693e"
+
+[[mutator.file]]
+path = "falcon.cevehicle"
+size = 10292316
+sha256 = "4d6781a6222e20154fdc24924f71c5b1fb1342f2cf575d5a7ceaaa0dac01e193"
+
+[[mutator]]
+folder = "revolved_plasma_rifle"
+id = "revolved_plasma_rifle"
+name = "Revolved plasma rifle"
+version = "2"
+authors = []
+description = "The plasma rifle as Combat Revolved has it, without its zoom: 6 to 9 shots a second, a spread of at most 0.75 degrees, slower bolts of 13 damage that reach 45 world units, and less overheating and wear."
+format = 2
+size = 1689
+
+[[mutator.file]]
+path = "mutator.toml"
+size = 1689
+sha256 = "2afa38ad3d86b1c6f38fb8ed12ae6e4a003ed7d10fedf00290cef1255c24830f"
