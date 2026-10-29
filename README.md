@@ -11,8 +11,10 @@ and any files it names (docs/mutators.md, docs/addons.md in GulchCE).
 | `falcon` | A UH-144 Falcon on Blood Gulch, from `bigass_open_v1.1.map` (an add-on) |
 
 To play one, copy its folder into the data root's `mutators` folder. The
-three stock mutators are already in the game: a copy here has their ids, so
-the game plays the stock one, not the copy, until its `id` is changed.
+three stock mutators are already in the game: a copy of one, unchanged, is
+played once, as the stock one. A changed copy keeps the id in its
+`mutator.toml` and is played as `big_head@<its folder>` (docs/mutators.md,
+"Two mutators with one id", in GulchCE).
 
 `falcon/falcon.cevehicle` is built from `bigass_open_v1.1.map` with GulchCE's
 `build/linux/cevehicle_build` (the command is in `falcon/mutator.toml`). The
