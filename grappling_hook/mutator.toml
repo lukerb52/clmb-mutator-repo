@@ -16,7 +16,7 @@ file = "main.lua"
 keyboard = "Left Shift"
 controller = "DPad Down"
 # how fast the pull speed increases, a tick
-speed = 0.0004
+speed = 0.004
 # affects pulling of the player
 z_offset = 0.45
 # how fast the hook moves after being shot, a tick
