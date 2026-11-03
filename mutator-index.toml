@@ -25,17 +25,17 @@ sha256 = "974cbdbb2472bc8a30279ac26172bb1cfccc212759024b566da56118c5e6abbd"
 folder = "big_head"
 id = "big_head"
 name = "Big head"
-version = "1"
+version = "2"
 authors = []
 description = "Every biped's head, the players' and the AI's, is drawn and hit at two and a half times its size."
-format = 1
-size = 205
-sha256 = "9a58f46b1a82f98ca779c2893c35d16bea43026432dc8c8be4ce9a649a4d4fc3"
+format = 6
+size = 299
+sha256 = "23453cce4a38c9613bcd8566b9b1c88e11392ad300bf573943d9ee7eb97d214e"
 
 [[mutator.file]]
 path = "mutator.toml"
-size = 205
-sha256 = "bb147e9de6ee0b2d6e4a829c12792010828a650dcf8bf91eeffdf0feefb8ffc1"
+size = 299
+sha256 = "abc5a9411597ed71a8735dfaefdf7ccccdea6e3a5f5e68bf3a83257db5585a0f"
 
 [[mutator]]
 folder = "falcon"
@@ -62,17 +62,17 @@ sha256 = "4d6781a6222e20154fdc24924f71c5b1fb1342f2cf575d5a7ceaaa0dac01e193"
 folder = "grappling_hook"
 id = "grappling_hook"
 name = "Grappling hook"
-version = "2"
+version = "3"
 authors = []
-description = "Hold a button to fire a hook along your aim and be pulled to where it lands, from a campaign mod's script: Left Shift or D-pad Down. Change the key in Controls Setup, or either control in a settings.toml beside it."
+description = "Fire a hook along your aim with Left Shift or D-pad Down, and press it again to let go. On the line, hold jump to climb it and crouch to let it out; otherwise you swing on it. From a campaign mod. Change the key in Controls Setup, or either control in a settings.toml beside it."
 format = 5
-size = 345418
-sha256 = "1a97ece463fc43a7ef4f2255ce288fdfe4e5552312d5e90cd5904290e00d03cd"
+size = 348045
+sha256 = "fc6bcc24a6117c69ac731a13552c1455fe5a8398d1af0c0cda74dbb809139b21"
 
 [[mutator.file]]
 path = "mutator.toml"
-size = 1389
-sha256 = "73d969fc58d23a3c86d4ab56c495d0075748dbc6ce001689f7bcdf778defe800"
+size = 1586
+sha256 = "0e3992cb6d791a938d17e4779705864dbdf88df61aaf72e6ae98dd76fa779d4d"
 
 [[mutator.file]]
 path = "grappling_hook.ceweapon"
@@ -81,8 +81,8 @@ sha256 = "5cb4767fbbd639d63c03e945c53f9d8880acf39b72da4b188dd6f6c353537894"
 
 [[mutator.file]]
 path = "main.lua"
-size = 8443
-sha256 = "7dd2535833bb10a2b1843ec99f97f01f3e71ef6f1acdb919058df13e543e5424"
+size = 10873
+sha256 = "bf8d08d2ec9436e22adefe20344ee2dedcdec4f96f371dbb18e9c87cc0e58ba0"
 
 [[mutator]]
 folder = "revolved_plasma_rifle"

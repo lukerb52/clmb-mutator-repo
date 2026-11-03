@@ -1,12 +1,17 @@
--- The grappling hook of a campaign mod's a10.lua: hold a button to fire a hook
--- along your aim, and it pulls you, and what it hit, together. Its values are in
--- mutator.toml's [script].
+-- The grappling hook of a campaign mod's a10.lua: press its button to fire a hook
+-- along your aim, and again to let it go. On the line, hold jump to climb it (the
+-- mod's pull, which pulls what it hit too) and crouch to let it out; otherwise the
+-- line keeps its length and you swing on it. Its values are in mutator.toml's
+-- [script].
 --
 -- tick() runs on every machine for every player, from the buttons the network
 -- brings, so a client's player is pulled at once, as its running is. The host
 -- decides: it alone moves what isn't a player, and its word corrects the rest.
 
-local BUTTON = 0
+-- the buttons each player's machine sends: the hook wanted, climbing, letting out
+local HOOK = 0
+local CLIMB = 1
+local LET_OUT = 2
 
 -- the mod's own: the hook's head, and the rope from the hand to it (its two nodes)
 local HEAD = "altis\\weapons\\grappling_hook\\hook"
@@ -34,7 +39,7 @@ local last_time = 0
 local function state_of(index)
 	local state = hooks[index]
 	if not state then
-		state = { ready = 0, pulling = false }
+		state = { ready = 0, armed = false }
 		hooks[index] = state
 	end
 	return state
@@ -98,6 +103,8 @@ local function fly(hook, unit)
 	if x then
 		hook.x, hook.y, hook.z = x, y, z
 		hook.attached = true
+		local ux, uy, uz = object.position(unit)
+		hook.length = math.sqrt((x - ux) ^ 2 + (y - uy) ^ 2 + (z - uz) ^ 2)
 		if thing then
 			local tx, ty, tz = object.position(thing)
 			hook.object = thing
@@ -169,6 +176,23 @@ local function pull(state, hook, unit)
 	end
 end
 
+-- the line holds its length: what would take the player further is taken away,
+-- and a little more brings them back to it, so they swing on it
+local function hold(hook, unit, distance)
+	if distance <= hook.length or distance <= 0 then
+		return
+	end
+	local x, y, z = object.position(unit)
+	local rx, ry, rz = (hook.x - x) / distance, (hook.y - y) / distance, (hook.z - z) / distance
+	local vx, vy, vz = object.velocity(unit)
+	local along = vx * rx + vy * ry + vz * rz
+	local back = math.min((distance - hook.length) * 0.3, 0.2)
+	if along < 0 then
+		back = back - along
+	end
+	object.set_velocity(unit, vx + rx * back, vy + ry * back, vz + rz * back)
+end
+
 local function update(index)
 	local state = state_of(index)
 	local unit = player.unit(index)
@@ -178,16 +202,22 @@ local function update(index)
 		return
 	end
 	local in_vehicle = object.parent(unit) ~= nil
-	local held = player.button(index, BUTTON)
+	local wanted = player.button(index, HOOK)
 
-	if state.hook and (not held or in_vehicle) then
+	-- (a hook is fired as the button goes on: one that misses, or that a
+	-- vehicle takes away, isn't fired again until it has been let go)
+	if not wanted then
+		state.armed = true
+	end
+	if state.hook and (not wanted or in_vehicle) then
 		remove_hook(state, unit)
 	end
 	if state.ready > 0 then
 		state.ready = state.ready - 1
 	end
-	if not state.hook and held and state.ready == 0 and not in_vehicle then
+	if not state.hook and wanted and state.armed and state.ready == 0 and not in_vehicle then
 		fire(state, index, unit)
+		state.armed = false
 	end
 
 	local hook = state.hook
@@ -206,12 +236,22 @@ local function update(index)
 	end
 	local x, y, z = object.position(unit)
 	local dx, dy, dz = hook.x - x, hook.y - y, hook.z - z
-	if math.sqrt(dx * dx + dy * dy + dz * dz) > settings.min_distance then
-		pull(state, hook, unit)
-		state.pulling = true
-	elseif state.pulling then
-		remove_hook(state, unit)
+	local distance = math.sqrt(dx * dx + dy * dy + dz * dz)
+	-- (the line takes in what slack there is, as a winch's does: the player hangs
+	-- where they came nearest, unless it is let out)
+	if player.button(index, LET_OUT) then
+		hook.length = math.min(settings.range, hook.length + settings.let_out_speed)
+	else
+		hook.length = math.max(settings.min_distance, math.min(hook.length, distance))
 	end
+	if player.button(index, CLIMB) then
+		if distance > settings.min_distance then
+			pull(state, hook, unit)
+		end
+		return
+	end
+	release_moved(state)
+	hold(hook, unit, distance)
 end
 
 function tick()
@@ -286,8 +326,38 @@ local function show(index, hook, unit)
 	model.face_view(models.rope)
 end
 
+-- this machine's player's hook, as its button toggles it
+local wanted = false
+local was_pressed = false
+local asked_at = 0
+local seen = false
+
+local function toggle()
+	local pressed = input.held(settings.keyboard) or input.held(settings.controller)
+	local time = game.time()
+	if pressed and not was_pressed then
+		wanted = not wanted
+		asked_at = time
+		seen = false
+	end
+	was_pressed = pressed
+	-- (one that went by itself, a miss or a vehicle, or that never went, is off)
+	if wanted then
+		local index = player.local_index()
+		local state = index and hooks[index]
+		if state and state.hook then
+			seen = true
+		elseif seen or time < asked_at or time - asked_at > settings.cooldown + 15 then
+			wanted = false
+		end
+	end
+	input.button(HOOK, wanted)
+	input.button(CLIMB, wanted and input.jump())
+	input.button(LET_OUT, wanted and input.crouch())
+end
+
 function frame()
-	input.button(BUTTON, input.held(settings.keyboard) or input.held(settings.controller))
+	toggle()
 	for index in pairs(shown) do
 		local state = hooks[index]
 		if not state or not state.hook or not player.unit(index) then

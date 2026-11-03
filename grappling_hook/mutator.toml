@@ -1,8 +1,8 @@
 format = 5
 name = "Grappling hook"
 id = "grappling_hook"
-version = "2"
-description = "Hold a button to fire a hook along your aim and be pulled to where it lands, from a campaign mod's script: Left Shift or D-pad Down. Change the key in Controls Setup, or either control in a settings.toml beside it."
+version = "3"
+description = "Fire a hook along your aim with Left Shift or D-pad Down, and press it again to let go. On the line, hold jump to climb it and crouch to let it out; otherwise you swing on it. From a campaign mod. Change the key in Controls Setup, or either control in a settings.toml beside it."
 # the mod's hook gun, hook and rope, with their sounds, from its a10.map:
 #   build/linux/addon_build --map a10.map --maps <custom_maps> \
 #     --weapon 'altis\weapons\grappling_hook\weapon\grappling_hook' \
@@ -15,14 +15,16 @@ addon = "grappling_hook.ceweapon"
 file = "main.lua"
 keyboard = "Left Shift"
 controller = "DPad Down"
-# how fast the pull speed increases, a tick
-speed = 0.008
+# how fast the pull speed increases while climbing (holding jump), a tick
+speed = 0.006
 # affects pulling of the player
 z_offset = 0.45
 # how fast the hook moves after being shot, a tick
 projectile_velocity = 1.5
-# how close the player must be for the hook to disappear
+# how close climbing takes the player to the hook
 min_distance = 0.5
+# how fast crouching lets the line out, a tick
+let_out_speed = 0.05
 # how much of their speed the player keeps once the hook is released (1 keeps it all; the mod had 0.35)
 release_multiplier = 1.0
 # how fast objects are pulled
