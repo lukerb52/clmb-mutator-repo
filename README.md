@@ -9,6 +9,8 @@ and any files it names (docs/mutators.md, docs/addons.md in GulchCE).
 | `big_head` | Heads drawn and hit at two and a half times their size (a stock mutator) |
 | `revolved_plasma_rifle` | The plasma rifle as Combat Revolved has it (a stock mutator) |
 | `falcon` | A UH-144 Falcon on Blood Gulch, from `bigass_open_v1.1.map` (an add-on) |
+| `grappling_hook` | The grappling hook of a campaign mod: hold Left Shift or D-pad Down to fire it and be pulled to where it lands, with the mod's hook, rope and sounds (a Lua script and an add-on; needs a build with scripts) |
+| `third_person` | Minecraft-style views: first person, from behind, from in front (F5 or D-pad Up, a Lua script; needs a build with scripts) |
 
 To play one, copy its folder into the data root's `mutators` folder. The
 three stock mutators are already in the game: a copy of one, unchanged, is
@@ -19,6 +21,11 @@ played once, as the stock one. A changed copy keeps the id in its
 `falcon/falcon.cevehicle` is built from `bigass_open_v1.1.map` with GulchCE's
 `build/linux/cevehicle_build` (the command is in `falcon/mutator.toml`). The
 Falcon is a fan asset without a licence.
+
+`grappling_hook/grappling_hook.ceweapon` is built from the grappling hook
+campaign mod's `a10.map` with GulchCE's `build/linux/addon_build` (the command
+is in `grappling_hook/mutator.toml`). Its models and sounds are the mod's, a fan
+asset without a licence.
 
 ## The index
 

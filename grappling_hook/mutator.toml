@@ -1,0 +1,36 @@
+format = 5
+name = "Grappling hook"
+id = "grappling_hook"
+version = "2"
+description = "Hold a button to fire a hook along your aim and be pulled to where it lands, from a campaign mod's script: Left Shift or D-pad Down. Change the key in Controls Setup, or either control in a settings.toml beside it."
+# the mod's hook gun, hook and rope, with their sounds, from its a10.map:
+#   build/linux/addon_build --map a10.map --maps <custom_maps> \
+#     --weapon 'altis\weapons\grappling_hook\weapon\grappling_hook' \
+#     --also 'weap:altis\weapons\grappling_hook\grappling_hook' \
+#     --also 'proj:altis\weapons\grappling_hook\hook' \
+#     --stock <maps>/beavercreek.map ... --stock <maps>/wizard.map --out grappling_hook.ceweapon
+addon = "grappling_hook.ceweapon"
+
+[script]
+file = "main.lua"
+keyboard = "Left Shift"
+controller = "DPad Down"
+# how fast the pull speed increases, a tick
+speed = 0.0004
+# affects pulling of the player
+z_offset = 0.45
+# how fast the hook moves after being shot, a tick
+projectile_velocity = 1.5
+# how close the player must be for the hook to disappear
+min_distance = 0.5
+# how much to slow down the player once the hook is released
+release_multiplier = 0.35
+# how fast objects are pulled
+object_multiplier = 2.0
+# ticks before it can fire again
+cooldown = 20
+# how far the hook flies before it gives up
+range = 150.0
+
+[script.menu]
+keyboard = "GRAPPLING HOOK"

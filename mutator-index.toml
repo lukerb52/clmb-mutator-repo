@@ -59,6 +59,32 @@ size = 10292316
 sha256 = "4d6781a6222e20154fdc24924f71c5b1fb1342f2cf575d5a7ceaaa0dac01e193"
 
 [[mutator]]
+folder = "grappling_hook"
+id = "grappling_hook"
+name = "Grappling hook"
+version = "2"
+authors = []
+description = "Hold a button to fire a hook along your aim and be pulled to where it lands, from a campaign mod's script: Left Shift or D-pad Down. Change the key in Controls Setup, or either control in a settings.toml beside it."
+format = 5
+size = 345418
+sha256 = "1a97ece463fc43a7ef4f2255ce288fdfe4e5552312d5e90cd5904290e00d03cd"
+
+[[mutator.file]]
+path = "mutator.toml"
+size = 1389
+sha256 = "73d969fc58d23a3c86d4ab56c495d0075748dbc6ce001689f7bcdf778defe800"
+
+[[mutator.file]]
+path = "grappling_hook.ceweapon"
+size = 335586
+sha256 = "5cb4767fbbd639d63c03e945c53f9d8880acf39b72da4b188dd6f6c353537894"
+
+[[mutator.file]]
+path = "main.lua"
+size = 8443
+sha256 = "7dd2535833bb10a2b1843ec99f97f01f3e71ef6f1acdb919058df13e543e5424"
+
+[[mutator]]
 folder = "revolved_plasma_rifle"
 id = "revolved_plasma_rifle"
 name = "Revolved plasma rifle"
@@ -73,3 +99,24 @@ sha256 = "d724640731b3faa306759127c133f8eb0a8d05090e53357a4a68017eeff1bb04"
 path = "mutator.toml"
 size = 1689
 sha256 = "2afa38ad3d86b1c6f38fb8ed12ae6e4a003ed7d10fedf00290cef1255c24830f"
+
+[[mutator]]
+folder = "third_person"
+id = "third_person"
+name = "Third person"
+version = "1"
+authors = []
+description = "Step your own view through first person, from behind with the crosshair above your head, and from in front: F5 or D-pad Up. Change the key in Controls Setup, or either control in a settings.toml beside it."
+format = 5
+size = 1193
+sha256 = "e3a909a5fb8c56562489ae45208f656b9d29d1b4a5751219bb9669615cbd585c"
+
+[[mutator.file]]
+path = "mutator.toml"
+size = 426
+sha256 = "8c85241a62bbab3a0d2acb6b4d791965ea92bfb5f11c7914d185390947949da2"
+
+[[mutator.file]]
+path = "main.lua"
+size = 767
+sha256 = "690d84711062026475e448828648b099b4c25fa61f8d13ea06b78eca652051e9"
