@@ -13,8 +13,8 @@
 
 name = "Falcon"
 id = "falcon"
-version = "1"
-description = "A UH-144 Falcon on Blood Gulch, ten world units in front of the red base's Warthog. Its pilot flies it and fires its chin gun; its passengers fire their own weapons."
+version = "2"
+description = "A UH-144 Falcon at each base of Blood Gulch, ten world units in front of its Warthog. Its pilot flies it and fires its chin gun; its passengers fire their own weapons."
 format = 3
 addon = "falcon.cevehicle"
 
@@ -25,3 +25,11 @@ map = "bloodgulch"
 vehicle = 'vehicles\falcon\falcon'
 position = [35.750, -98.335, 1.0]
 facing = -48.6
+
+# the other base's Warthog is at (102.284, -144.725, 0.964), facing 108.9
+# degrees (as the game placed it): the same, ten world units on
+[[place]]
+map = "bloodgulch"
+vehicle = 'vehicles\falcon\falcon'
+position = [99.046, -135.264, 1.7]
+facing = 108.9
