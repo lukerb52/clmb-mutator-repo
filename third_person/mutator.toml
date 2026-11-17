@@ -1,11 +1,11 @@
 name = "Third person"
 id = "third_person"
-version = "1"
+version = "2"
 description = "Step your own view through first person, from behind with the crosshair above your head, and from in front: F5 or D-pad Up. Change the key in Controls Setup, or either control in a settings.toml beside it."
 format = 5
 
 [script]
-file = "main.lua"
+file = "main.hsc"
 distance = 2.5
 height = 0.25
 keyboard = "F5"

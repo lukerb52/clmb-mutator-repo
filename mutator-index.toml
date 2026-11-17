@@ -41,17 +41,17 @@ sha256 = "abc5a9411597ed71a8735dfaefdf7ccccdea6e3a5f5e68bf3a83257db5585a0f"
 folder = "falcon"
 id = "falcon"
 name = "Falcon"
-version = "1"
+version = "2"
 authors = []
-description = "A UH-144 Falcon on Blood Gulch, ten world units in front of the red base's Warthog. Its pilot flies it and fires its chin gun; its passengers fire their own weapons."
+description = "A UH-144 Falcon at each base of Blood Gulch, ten world units in front of its Warthog. Its pilot flies it and fires its chin gun; its passengers fire their own weapons."
 format = 3
-size = 10293512
-sha256 = "7323c3174487f22cffe6086e98e83f53aa0d27ad0965aa18740e3caafeb1d557"
+size = 10293767
+sha256 = "8dfffbd6394fa283bf403ea312075fccf32f9d836c072b589054d766ab78bf5a"
 
 [[mutator.file]]
 path = "mutator.toml"
-size = 1196
-sha256 = "5a2f9dbe24157a615a937563bac4d7303d03d78d55e7689d35605ac4c79d693e"
+size = 1451
+sha256 = "353e4a9e920e9b254775a2204428ec0ad4a37629137bf47b5ba8195bbb134f2b"
 
 [[mutator.file]]
 path = "falcon.cevehicle"
@@ -62,17 +62,17 @@ sha256 = "4d6781a6222e20154fdc24924f71c5b1fb1342f2cf575d5a7ceaaa0dac01e193"
 folder = "grappling_hook"
 id = "grappling_hook"
 name = "Grappling hook"
-version = "3"
+version = "4"
 authors = []
 description = "Fire a hook along your aim with Left Shift or D-pad Down, and press it again to let go. On the line, hold jump to climb it and crouch to let it out; otherwise you swing on it. From a campaign mod. Change the key in Controls Setup, or either control in a settings.toml beside it."
 format = 5
-size = 348045
-sha256 = "fc6bcc24a6117c69ac731a13552c1455fe5a8398d1af0c0cda74dbb809139b21"
+size = 349578
+sha256 = "3fa93ade95238c75e3a0204895dd31290aecb937e27d299336b53f6ceb55f59a"
 
 [[mutator.file]]
 path = "mutator.toml"
 size = 1586
-sha256 = "0e3992cb6d791a938d17e4779705864dbdf88df61aaf72e6ae98dd76fa779d4d"
+sha256 = "dfe66d987aef1274bd99b467eb84980af4c04cafc15d137e23912bc0d1956bb6"
 
 [[mutator.file]]
 path = "grappling_hook.ceweapon"
@@ -80,9 +80,9 @@ size = 335586
 sha256 = "5cb4767fbbd639d63c03e945c53f9d8880acf39b72da4b188dd6f6c353537894"
 
 [[mutator.file]]
-path = "main.lua"
-size = 10873
-sha256 = "bf8d08d2ec9436e22adefe20344ee2dedcdec4f96f371dbb18e9c87cc0e58ba0"
+path = "main.hsc"
+size = 12406
+sha256 = "65cff3676135919634ee41fe02c1fd20b7fc55b99b9977392fce221bfa3eb5f5"
 
 [[mutator]]
 folder = "revolved_plasma_rifle"
@@ -104,19 +104,19 @@ sha256 = "2afa38ad3d86b1c6f38fb8ed12ae6e4a003ed7d10fedf00290cef1255c24830f"
 folder = "third_person"
 id = "third_person"
 name = "Third person"
-version = "1"
+version = "2"
 authors = []
 description = "Step your own view through first person, from behind with the crosshair above your head, and from in front: F5 or D-pad Up. Change the key in Controls Setup, or either control in a settings.toml beside it."
 format = 5
-size = 1193
-sha256 = "e3a909a5fb8c56562489ae45208f656b9d29d1b4a5751219bb9669615cbd585c"
+size = 1464
+sha256 = "f96658818f7a2104903ebb0bccfa7e125b3adc0262ae3ab8096f7f521ddeaf5a"
 
 [[mutator.file]]
 path = "mutator.toml"
 size = 426
-sha256 = "8c85241a62bbab3a0d2acb6b4d791965ea92bfb5f11c7914d185390947949da2"
+sha256 = "3722b8c6a241d74435d83de84a6340eb5396224f858c6a12eec99b4b93db1bc3"
 
 [[mutator.file]]
-path = "main.lua"
-size = 767
-sha256 = "690d84711062026475e448828648b099b4c25fa61f8d13ea06b78eca652051e9"
+path = "main.hsc"
+size = 1038
+sha256 = "c947e127358555d81bb98467f94ad628c32ba5989984d26a9522f535ad57dc8c"

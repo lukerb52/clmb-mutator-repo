@@ -9,8 +9,8 @@ and any files it names (docs/mutators.md, docs/addons.md in GulchCE).
 | `big_head` | Heads drawn and hit at two and a half times their size (a stock mutator: a pose) |
 | `revolved_plasma_rifle` | The plasma rifle as Combat Revolved has it (a stock mutator) |
 | `falcon` | A UH-144 Falcon on Blood Gulch, from `bigass_open_v1.1.map` (an add-on) |
-| `grappling_hook` | The grappling hook of a campaign mod: Left Shift or D-pad Down fires it and lets it go; on the line, jump climbs, crouch lets it out, and you swing, with the mod's hook, rope and sounds (a Lua script and an add-on; needs a build with scripts) |
-| `third_person` | Minecraft-style views: first person, from behind, from in front (F5 or D-pad Up, a Lua script; needs a build with scripts) |
+| `grappling_hook` | The grappling hook of a campaign mod: Left Shift or D-pad Down fires it and lets it go; on the line, jump climbs, crouch lets it out, and you swing, with the mod's hook, rope and sounds (a native Halo `.hsc` script and an add-on; needs a build with scripts) |
+| `third_person` | Minecraft-style views: first person, from behind, from in front (F5 or D-pad Up, a native Halo `.hsc` script; needs a build with scripts) |
 
 To play one, copy its folder into the data root's `mutators` folder. The
 three stock mutators are already in the game: a copy of one, unchanged, is
@@ -26,6 +26,18 @@ Falcon is a fan asset without a licence.
 campaign mod's `a10.map` with GulchCE's `build/linux/addon_build` (the command
 is in `grappling_hook/mutator.toml`). Its models and sounds are the mod's, a fan
 asset without a licence.
+
+## Native scripting compatibility
+
+`third_person/main.hsc` uses native static scripts and scalar globals. It keeps
+all three camera modes, live settings, input edge detection, and the vehicle,
+death and camera-ownership checks. Global initializers are constants only.
+
+
+The grappling hook uses native HS per-player callbacks and bounded typed state.
+Its projectile, swing constraints, climb pull, vehicle coefficients, cooldown,
+input toggle and hook/rope visuals are implemented in `grappling_hook/main.hsc`.
+The host supplies generic state, finite math, object, input and rendering APIs.
 
 ## The index
 
