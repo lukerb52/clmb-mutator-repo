@@ -62,17 +62,17 @@ sha256 = "4d6781a6222e20154fdc24924f71c5b1fb1342f2cf575d5a7ceaaa0dac01e193"
 folder = "grappling_hook"
 id = "grappling_hook"
 name = "Grappling hook"
-version = "4"
+version = "5"
 authors = []
 description = "Fire a hook along your aim with Left Shift or D-pad Down, and press it again to let go. On the line, hold jump to climb it and crouch to let it out; otherwise you swing on it. From a campaign mod. Change the key in Controls Setup, or either control in a settings.toml beside it."
 format = 5
-size = 349578
-sha256 = "3fa93ade95238c75e3a0204895dd31290aecb937e27d299336b53f6ceb55f59a"
+size = 349566
+sha256 = "d8846fa59b8811a9f8bec5f748099d3717950d8e1ed3338ca59a0356e4be4851"
 
 [[mutator.file]]
 path = "mutator.toml"
 size = 1586
-sha256 = "dfe66d987aef1274bd99b467eb84980af4c04cafc15d137e23912bc0d1956bb6"
+sha256 = "d70aeb8f52671bd0e2fb5b4c29dcfc5e8340784c4e573136fe5b1c6a08f75b2e"
 
 [[mutator.file]]
 path = "grappling_hook.ceweapon"
@@ -81,8 +81,8 @@ sha256 = "5cb4767fbbd639d63c03e945c53f9d8880acf39b72da4b188dd6f6c353537894"
 
 [[mutator.file]]
 path = "main.hsc"
-size = 12406
-sha256 = "65cff3676135919634ee41fe02c1fd20b7fc55b99b9977392fce221bfa3eb5f5"
+size = 12394
+sha256 = "6e6039a293256289b9b16d8761e67f17c63298896f8930f4815a1c92c8ece04b"
 
 [[mutator]]
 folder = "revolved_plasma_rifle"

@@ -1,7 +1,7 @@
 format = 5
 name = "Grappling hook"
 id = "grappling_hook"
-version = "4"
+version = "5"
 description = "Fire a hook along your aim with Left Shift or D-pad Down, and press it again to let go. On the line, hold jump to climb it and crouch to let it out; otherwise you swing on it. From a campaign mod. Change the key in Controls Setup, or either control in a settings.toml beside it."
 # the mod's hook gun, hook and rope, with their sounds, from its a10.map:
 #   build/linux/addon_build --map a10.map --maps <custom_maps> \
